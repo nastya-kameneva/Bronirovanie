@@ -1,0 +1,16 @@
+import pytest
+
+# Функция деления
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+
+# Функция проверки четности
+def is_even(n):
+    return n % 2 == 0
+
+# Тест на деление на ноль
+def test_divide_by_zero():
+    with pytest.raises(ValueError, match="Cannot divide by zero"):
+        divide(10, 0)
